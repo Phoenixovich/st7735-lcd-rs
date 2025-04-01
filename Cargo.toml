@@ -1,18 +1,17 @@
 [package]
 name = "st7735-lcd"
 description = "ST7735 TFT LCD driver with embedded-graphics support"
-version = "0.10.0"
-authors = ["Paul Sajna <sajattack@gmail.com>"]
+version = "0.10.1"
+authors = ["Paul Sajna <sajattack@gmail.com> (original) / Phoenixovich (edit)"]
 edition = "2018"
 license = "MIT"
-repository = "https://github.com/sajattack/st7735-lcd-rs"
+repository = "https://github.com/Phoenixovich/st7735-lcd-rs"
 readme = "README.md"
 documentation = "https://docs.rs/st7735-lcd"
 
 [dependencies]
 embedded-hal = "1.0.0"
 nb = "1.1.0"
-
 
 [dependencies.embedded-graphics]
 version = "0.7"

@@ -13,10 +13,11 @@ documentation = "https://docs.rs/st7735-lcd"
 embedded-hal = "1.0.0"
 nb = "1.1.0"
 
-[dependencies.embedded-graphics-core]
-version = "0.4"
+
+[dependencies.embedded-graphics]
+version = "0.7"
 optional = true
 
 [features]
 default = ["graphics"]
-graphics = ["embedded-graphics-core"]
+graphics = ["embedded-graphics"]

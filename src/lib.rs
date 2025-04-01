@@ -6,6 +6,7 @@ pub mod instruction;
 
 use crate::instruction::Instruction;
 
+use embedded_graphics::{prelude::{OriginDimensions, Point, Size}, Pixel};
 use embedded_hal::delay::DelayNs;
 use embedded_hal::spi;
 use embedded_hal::digital::OutputPin;
@@ -248,9 +249,9 @@ where
 }
 
 #[cfg(feature = "graphics")]
-extern crate embedded_graphics_core;
+extern crate embedded_graphics;
 #[cfg(feature = "graphics")]
-use self::embedded_graphics_core::{
+use self::embedded_graphics::{
     draw_target::DrawTarget,
     pixelcolor::{
         raw::{RawData, RawU16},
@@ -315,7 +316,7 @@ where
         Ok(())
     }
 
-    fn clear(&mut self, color: Self::Color) -> Result<(), Self::Error> {
+    fn clear(&mut self, color: <Self as DrawTarget>::Color) -> Result<(), Self::Error> {
         self.set_pixels_buffered(
             0,
             0,
